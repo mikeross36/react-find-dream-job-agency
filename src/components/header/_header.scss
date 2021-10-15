@@ -1,0 +1,250 @@
+header {
+    margin: 0 auto;
+    width: 100%;
+    background: $mainBcg;
+}
+
+nav {
+    width: 100%;
+    margin: 0 auto;
+    padding: .7rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: $boxShadow;
+    
+    @include breakpoint-up(large){
+        padding: .5rem 5rem;
+    }
+}
+
+.header-logo {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint-up(large){
+        margin-left: 1.5rem;
+    }
+
+    .logo {
+        padding: .5rem 0;
+        font-size: 1rem;
+        font-style: italic;
+        text-align: left;
+        font-weight: bold;
+        color: $white;
+        text-transform: capitalize;
+        text-shadow: $textShadow;
+        cursor: pointer;
+    }
+
+    .header-clock {
+        color: $white;
+        text-shadow: $textShadow;
+        width: 100%;
+        font-weight: bolder;
+        letter-spacing: 1px;
+    }
+}
+
+.menu-btn {
+    position: absolute;
+    right: 5%;
+    top: 30%;
+    height: 2rem;
+    width: 2.5rem;
+    z-index: 5;
+    transform: rotate(0deg);
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+
+    @include breakpoint-up(medium){
+        display: none;
+    }
+}
+
+.burger {
+    display: block;
+    position: absolute;
+    left: 0;
+    height: .4rem;
+    width: 100%;
+    background: $white;
+    box-shadow: $textShadow;
+    opacity: 1;
+    border-radius: 1rem;
+    z-index: 10;
+    transform: rotate(0deg);
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    border-bottom: .1875rem solid transparent;
+
+    &:nth-child(1){
+        top: 0;
+        &.open {
+            top: 1.125rem;
+            transform: rotate(135deg);
+        }
+    }
+    &:nth-child(2){
+        top: .6875rem;
+        &.open {
+            opacity: 0;
+        }
+    }
+    &:nth-child(3){
+        top: 1.375rem;
+        &.open {
+            top: 1.125rem;
+            transform: rotate(-135deg)
+        }
+    }
+}
+
+.desktop-links {
+    display: none;
+
+    @include breakpoint-up(medium){
+        justify-self: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 1.5rem;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+    }
+
+    .link-wrapper {
+        @include breakpoint-up(medium){
+            height: 100%;
+        }
+
+        .link-btn {
+            @include breakpoint-up(medium){
+                height: 100%;
+                color: $white;
+                font-size: 1.3rem;
+                font-weight: bold;
+                letter-spacing: 2px;
+                background: transparent;
+                border: none;
+                text-transform: capitalize;
+                text-shadow: $textShadow;
+                cursor: pointer;
+            }
+
+            @include breakpoint-up(large){
+                font-size: 1.5rem;
+                margin: 0 .5rem;
+            }
+        }
+    }
+}
+
+.signin-btn {
+    display: none;
+
+    @include breakpoint-up(medium){
+        display: block;
+        width: 6rem;
+        font-size: .7rem;
+        background: $btnBcg;
+        padding: .5rem;
+        border-radius: .25rem;
+        border-color: transparent;
+        color: $white;
+        text-shadow: $textShadow;
+        box-shadow: $boxShadow;
+        cursor: pointer;
+        transition: all .3s linear;
+
+        &:active {
+            transform: translate(5px, 10px);
+        } 
+    }
+}
+
+@keyframes fade-in {
+    from {
+        visibility: hidden;
+        opacity: 0;
+    }
+    1% {
+        visibility: visible;
+        opacity: 0;
+    }
+    to {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        visibility: visible;
+        opacity: 1;
+    }
+    99% {
+        visibility: visible;
+        opacity: 0;
+    }
+    to {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.mobile-links {
+    visibility: hidden;
+    position: absolute;
+    padding: 1rem;
+    width: 100%;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: $mainBlue;
+    box-shadow: .125rem -.125rem .25rem black;
+
+    @include breakpoint-up(medium){
+        left: -100%;
+        visibility: hidden;
+    }
+
+    &.fade-in {
+        animation: fade-in .3s ease-in-out forwards;
+    }
+    &.fade-out {
+        animation: fade-out .3s ease-in-out forwards;
+    }
+
+    .sublink {
+        display: block;
+        font-size: .8rem;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+    }
+
+    .page {
+        text-decoration: underline;
+        color: $white;
+        letter-spacing: 4px;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+
+        & a {
+            color: $white;
+            font-size: .8rem;
+            padding: .7rem 0;
+            margin: .7rem 0;
+            font-weight: bold;
+        }
+    }
+}

@@ -1,0 +1,74 @@
+.modal-layout {
+    display: none;
+    cursor: pointer;
+
+    @include breakpoint-up(medium){
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.6);
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+    }
+}
+
+.modal-wrapper {
+    display: none;
+
+    @include breakpoint-up(medium){
+        display: grid;
+        grid-template-columns: 70% 30%;
+        width: 48rem;
+        height: 25.25rem;
+        background: $mainGrey;
+        box-shadow: .5rem .5rem .5rem $black;
+        position: relative;
+        z-index: 100;
+        border-radius: 10px;
+    }
+
+    & img {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+    }
+}
+
+.modal-content {
+    cursor: default;
+    padding: 0 .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #636464;
+
+    & h3 {
+        color: $white;
+        text-shadow: $textShadow;
+    }
+
+    & h4 {
+        margin-bottom: 1rem;
+        line-height: 1.5;
+        letter-spacing: 2px;
+        color: $white;
+        text-shadow: $textShadow; 
+        text-transform: uppercase;
+    }
+}
+
+.close-modal {
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    z-index: 10;
+    color: $white;
+    filter: drop-shadow($textShadow);
+}

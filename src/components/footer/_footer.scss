@@ -1,0 +1,138 @@
+footer {
+    margin-top: 2rem;
+    height: 100vh;
+    background: $mainBlue;
+    padding-top: 1rem;
+
+    @include breakpoint-up(medium){
+        max-height: 35vh;
+    }
+}
+
+.footer-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    @include breakpoint-up(medium){
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "logo links1 links2"
+        "para links1 links2"
+        "contact contact contact";
+        grid-column-gap: 1rem;
+        justify-items: center;
+        align-items: start;
+        padding: 1rem;
+    }
+
+    & p {
+        font-size: .8rem;
+        color: $white;
+        padding: 0 2.5rem;
+        line-height: 1.5;
+        align-self: start;
+
+        @include breakpoint-up(medium) {
+            grid-area: para;
+            width: 80%;
+            padding: 0;
+            line-height: 1.6;
+            text-align: center;
+            align-self: start;
+        }
+    }
+}
+
+.footer-logo {
+    line-height: .8;
+
+    @include breakpoint-up(medium) {
+        grid-area: logo;
+        margin-top: -2rem;
+    }
+
+    & h3 {
+        color: $white;
+        font-style: italic;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+    
+    & .footer-clock {
+        display: inline-block;
+        font-family: Tahoma;
+        color: $mainYellow;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
+}
+
+.footer-contact {
+    width: 100%;
+    text-align: left;
+
+    @include breakpoint-up(medium) {
+        grid-area: contact;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    & a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 1rem;
+        color: $white;
+    }
+}
+
+.footer-links1, .footer-links2 {
+    display: flex;
+    flex-direction: column;
+
+    & span {
+        text-transform: capitalize;
+        color: $mainYellow;
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+    }
+
+    & a {
+        padding-bottom: 1rem;
+        font-size: .6rem;
+        color: $white;
+        text-transform: uppercase;
+        padding-bottom: 1rem;
+    }
+}
+.footer-links1 {
+    @include breakpoint-up(medium){
+        grid-area: links1;
+    }
+    
+}
+.footer-links2 {
+    @include breakpoint-up(medium){
+        grid-area: links2;
+    }
+}
+
+.copyright {
+    padding: .1rem;
+    width: 100%;
+    text-align: center;
+    background: $black;
+
+    & p {
+        color: $white;
+        font-size: .8rem;
+    }
+}

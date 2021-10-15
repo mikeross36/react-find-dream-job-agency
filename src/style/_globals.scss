@@ -1,0 +1,52 @@
+$white: #ffffff;
+$black: #000000;
+$mainBcg: #c0e7ab;
+$btnBcg: #f46b45;
+$textClr: #5c5c5c;
+$mobMenuBcg: #fcefc7;
+$mainGrey: #414345;
+$mainYellow: #f8f850e6;
+$mainBlue: #3d536b;
+
+$boxShadow: .25rem .25rem .25rem black;
+$textShadow: .125rem .125rem .125rem black;
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+*,*::before,*::after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+a, a:visited, a:hover {
+    text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 2rem;
+  @include breakpoint-up(large) {
+    font-size: 2.5rem;
+  }
+}
+h2 {
+  font-size: 1.5rem;
+  @include breakpoint-up(large) {
+    font-size: 2rem;
+  }
+}
+h3 {
+  font-size: 1rem;
+  @include breakpoint-up(large) {
+    font-size: 1.5rem;
+  }
+}

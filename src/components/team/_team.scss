@@ -1,0 +1,103 @@
+.team {
+    margin: 0 auto;
+    padding: 1rem;
+    height: 100%;
+    position: relative;
+
+    @include breakpoint-up(medium){
+        padding: 0 4rem;
+    }
+
+    & h2 {
+        text-transform: uppercase;
+        color: $textClr;
+        padding-top: 1rem;
+        text-align: center;
+    }
+}
+
+.team-wrapper {
+    padding: 1rem 2rem;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2rem;
+    justify-content: center;
+
+    @include breakpoint-up(medium){
+        column-gap: 3rem;
+    }
+}
+
+.team-mate {
+    margin: 0 auto;
+    background: linear-gradient(
+        rgba($white, .8), 
+        rgba($white, .8)),
+    url(/dist/images/team-bcg.jpg) center/cover no-repeat;
+    padding: 1rem 2rem;
+    max-width: 20rem;
+    max-height: 22rem;
+    border-radius: .5rem;
+    box-shadow: $boxShadow;
+
+    @include breakpoint-up(large){
+        max-width: 23rem;
+    }
+}
+
+.mate-img {
+    display: block;
+    margin: 0 auto;
+    max-width: 14rem;
+    max-height: 11rem;
+    border-radius: 5px;
+    border: .1rem solid $white;
+    transition: transform 1s ease-in-out;
+    cursor: pointer;
+    box-shadow: $boxShadow;
+
+    &:hover {
+        transform: rotateY(-180deg);
+    }
+}
+
+.img-footer {
+    color: $textClr;
+    text-align: center;
+    padding-top: .5rem;
+
+    & h3 {
+        margin: 0;
+        color: $textClr;
+        font-weight: bolder;
+        text-transform: capitalize;
+    }
+
+    & h5 {
+        margin: 0;
+        text-transform: capitalize;
+    }
+
+    & p {
+        font-size: .8rem;
+        line-height: 1.4;
+    }
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-around;
+
+    & a {
+        color: $white;
+        font-size: 1.5rem;
+        filter: drop-shadow($boxShadow);
+        transition: transform .5s ease, color .5s ease;
+
+        &:hover {
+            transform: translateY(-30%);
+            color: $btnBcg;
+        }
+    }
+}

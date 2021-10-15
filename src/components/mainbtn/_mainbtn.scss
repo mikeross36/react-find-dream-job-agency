@@ -1,0 +1,20 @@
+button {
+    padding: .6rem 2rem;
+    margin: 1rem 2rem;
+    background: $btnBcg;
+    text-transform: uppercase;
+    color: $white;
+    text-shadow: $textShadow;
+    font-weight: 900;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    box-shadow: $boxShadow;
+    transition: all .5s ease-in-out;
+
+    &:hover {
+        background: $white;
+        color: $textClr;
+        text-shadow: none;
+    }
+}
