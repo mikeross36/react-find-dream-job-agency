@@ -1,41 +1,30 @@
 import React from "react"
-import { FaQuoteRight } from "react-icons/fa"
-import woman from "../../images/woman.jpg"
+import { howList } from "./data"
+import {FaQuoteRight} from "react-icons/fa"
+import molly from "../../images/woman.jpg"
 
 export default function HowItWorks(){
     return (
-        <section className="how-works" id="how-works">
+        <section className="how-works" id="how">
             <div className="how-title">
-                <h2>how it works</h2>
+                <h1>how it works</h1>
             </div>
             <div className="how-wrapper">
                 <ul className="how-list">
-                    <li className="how-num">
-                        <h2>1</h2>
-                        <h4>They help others</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Recusandae, expedita.
-                        </p>
-                    </li>
-                    <li className="how-num">
-                        <h2>2</h2>
-                        <h4>They are engaging</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Recusandae, expedita.
-                        </p>
-                    </li>
-                    <li className="how-num">
-                        <h2>3</h2>
-                        <h4>They use your talents</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Recusandae, expedita.
-                        </p>
-                    </li>
+                    {howList.map(function(item){
+                        const {id, num, title, text} = item
+                        return (
+                            <li key={id} className="how-num">
+                                <h2>{num}</h2>
+                                <h4>{title}</h4>
+                                <p>{text}</p>
+                            </li>
+                        )
+                    })}
                 </ul>
             </div>
-           
             <article className="quote-post">
-                <blockquote>
+                <blockquote data-testid="blockquote">
                     <FaQuoteRight />
                     <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
@@ -50,7 +39,7 @@ export default function HowItWorks(){
                     <p>CEO at Industry Standard NY</p>
                 </blockquote>
                 <div className="image-wrapper">
-                    <img src={woman} alt="woman" />
+                    <img src={molly} alt="molly" />
                 </div>
             </article>
         </section>

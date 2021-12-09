@@ -1,39 +1,42 @@
 .how-works {
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0 1rem;
     height: 100%;
     color: $textClr;
     position: relative;
 
-    @include breakpoint-up(medium) {
-
-        &::before {
-            top: 5%;
-            left: 5%;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            content: '';
-            background-color: $mainYellow;
-            clip-path: polygon(0 5%, 95% 0%, 75% 95%, 0 60%);
-            z-index: -999;
-        }
+    &::before {
+        top: 5%;
+        left: 5%;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        content: '';
+        background-color: $mainYellow;
+        clip-path: polygon(0 5%, 95% 0%, 75% 95%, 0 60%);
+        z-index: -999;
     }
 
     @include breakpoint-up(large){
-        max-width: 90rem;
-        margin-bottom: 2rem;
-
-        &::before {
-            top: 10%;
-        }
+        max-width: 80rem;
+        padding: 2rem 1rem;
+        height: 100vh;
     }
 
     .how-title {
         text-align: center;
 
-        & h2 {
+        & h1 {
+            color: $btnBcg;
+            text-shadow: $textShadowLight;
             text-transform: capitalize;
+            font-weight: 900;
+            letter-spacing: 2px;
+
+            @include breakpoint-up(large){
+                color: $white;
+                text-shadow: $textShadow;
+            }
         }
     }
 }
@@ -63,11 +66,15 @@
     }
 
     & h4 {
-        margin: .5rem;
+        margin: 0;
     }
 
     & p {
+        margin: 0;
         line-height: 1.4;
+        @include breakpoint-up(medium) {
+            margin: .5rem;
+        }
     }
 }
 
@@ -116,6 +123,12 @@
         transform: translate(-1rem, 1rem);
         box-shadow: -.25rem .25rem .25rem $black;
         border-radius: 5px;
+        transition: transform .5s ease;
+        cursor: pointer;
+
+        &:hover {
+            transform: translate(.3rem, -.2rem);
+        }
 
         @include breakpoint-up(medium){
             width: 22rem;

@@ -1,9 +1,10 @@
 import React from "react"
+import nextId from "react-id-generator"
 import {FaCreditCard,FaBook,FaBriefcase} from "react-icons/fa"
 
 export const sublinks = [
     {
-        id: 1,
+        id: nextId(),
         page: "home",
         links: [
             {id:1,label:"team",icon:<FaCreditCard />, url:"#team"},
@@ -12,7 +13,7 @@ export const sublinks = [
         ]
     },
     {
-        id: 2,
+        id: nextId(),
         page: "services",
         links: [
             {id:4,label:"help",icon:<FaBook />, url:"#services"},
@@ -22,7 +23,7 @@ export const sublinks = [
         ]
     },
     {
-        id: 3,
+        id: nextId(),
         page: "company",
         links: [
             {id:8,label:"about",icon:<FaBriefcase />, url:"#slider"},

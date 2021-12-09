@@ -1,25 +1,17 @@
 import React from "react"
-import MainBtn from "../mainbtn/MainBtn"
-import { useAppContext } from "../../Context"
 
 export default function Hero(){
-    const {closeSubmenu} = useAppContext()
-
     return (
-        <section 
-            className="hero"
-            onMouseOver={closeSubmenu}>
+        <section className="hero" id="hero">
             <div className="hero-wrapper">
-                <div className="hero-text">
-                    <h2>Learn and find your <br/> dram job with us</h2>
-                    <p>
-                        Whether you're just beginning to figure out 
-                        your future profession of you're looking 
-                        to make a career change, trying to answer the 
-                        question "What career is right for me?"
-                    </p>
+                <div className="hero-text" data-testid="hero-text">
+                    <p>tools:</p>
+                    <h1>What is a dream job? 
+                        Learn and find your 
+                        dream job with us & 
+                        get dream jobs info 
+                    </h1>
                 </div>
-                <MainBtn />
                 <div className="hero-image"></div>
             </div>
         </section>

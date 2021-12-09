@@ -1,3 +1,4 @@
+import nextId from "react-id-generator"
 import anna from "../../images/anna.jpg"
 import jane from "../../images/jane.jpg"
 import jimie from "../../images/jimie.jpg"
@@ -6,35 +7,35 @@ import pepa from "../../images/pepa.jpg"
 
 export const slides = [
     {
-        id: 1,
+        id: nextId(),
         image: anna,
         name: "Anna",
         title: "musician",
         quote: '"Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, accusantium architecto modi eveniet dicta atque. Molestias vero explicabo, voluptatem amet voluptates quis."'
     },
     {
-        id: 2,
+        id: nextId(),
         image: jane,
         name: "Janne",
         title: "singer",
         quote: '"Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, accusantium architecto modi eveniet dicta atque. Molestias vero explicabo, voluptatem amet voluptates quis."'
     },
     {
-        id: 3,
+        id: nextId(),
         image: jimie,
         name: "Jimie",
         title: "vocalist",
         quote: '"Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, accusantium architecto modi eveniet dicta atque. Molestias vero explicabo, voluptatem amet voluptates quis."'
     },
     {
-        id: 4,
+        id: nextId(),
         image: johny,
         name: "Johny",
         title: "songwriter",
         quote: '"Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, accusantium architecto modi eveniet dicta atque. Molestias vero explicabo, voluptatem amet voluptates quis."'
     },
     {
-        id: 5,
+        id: nextId(),
         image: pepa,
         name: "Pepa",
         title: "bandleader",

@@ -1,5 +1,5 @@
 import React from "react"
-import { FaPhoneSquareAlt, FaEnvelope, FaMapMarkerAlt, FaMap } from "react-icons/fa"
+import { FaPhoneSquareAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
 
 export default function Footer({clock}){
     return(
